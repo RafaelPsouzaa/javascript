@@ -48,6 +48,5 @@ btn_add.addEventListener("click",(evt)=>{
     nome.value ="";
     idade.value="";
     nome.focus();
-    console.log(pessoas);
     addPessoa();
 })

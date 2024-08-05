@@ -39,7 +39,6 @@
                     <p class="text-sm">pao levinho de whey protein zero carbo 55g de proteinas </p>
                     <!-- preço e botao -->
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <!-- https://www.youtube.com/watch?v=rjXXDv23-6Y&t=1337s&ab_channel=Sujeitoprogramador -->
                         <p class="font-bold text-lg">R$ 18.90</p>
                         <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburger Smash"
                             data-price="18.90">
@@ -63,7 +62,6 @@
                     <p class="text-sm">pao levinho de whey protein zero carbo 55g de proteinas </p>
                     <!-- preço e botao -->
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <!-- https://www.youtube.com/watch?v=rjXXDv23-6Y&t=1337s&ab_channel=Sujeitoprogramador -->
                         <p class="font-bold text-lg">R$ 22.90</p>
                         <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburger bacon"
                             data-price="22.90">
@@ -87,7 +85,6 @@
                     <p class="text-sm">pao levinho de whey protein com queijo Coalho </p>
                     <!-- preço e botao -->
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <!-- https://www.youtube.com/watch?v=rjXXDv23-6Y&t=1337s&ab_channel=Sujeitoprogramador -->
                         <p class="font-bold text-lg">R$ 22.90</p>
                         <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburger Nordeste"
                             data-price="22.90">
@@ -111,7 +108,6 @@
                     <p class="text-sm">pao levinho de whey protein galinha apimentada </p>
                     <!-- preço e botao -->
                     <div class="flex items-center gap-2 justify-between mt-3">
-                        <!-- https://www.youtube.com/watch?v=rjXXDv23-6Y&t=1337s&ab_channel=Sujeitoprogramador -->
                         <p class="font-bold text-lg">R$ 22.90</p>
                         <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburger spicy chicken"
                             data-price="22.90">
@@ -125,9 +121,92 @@
             </div>
             <!-- FIM PRODUTO ITEM 4-->
         </main>
+        <div class="mx-auto max-w-7xl px-2 my-2">
+            <h2 class="font-bold text-3xl">Bebidas</h2>
+        </div>
+        <!-- Grid Bebidas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 mx-auto max-w-7xl px-2 mb-16 " id="menu">
+            <!-- Bebida ITEM 1-->
+            <div class="flex gap-2 w-full">
+                <img src="./assets/refri-1.png" alt="refri1" class="w-28 h-28 rounded-md hover:scale-110
+                 hover:-rotate-2 duration-300">
+                <!-- descriçao -->
+                <div class="w-full">
+                    <p class="font-bold">Coca Lata</p>
+                    <p class="text-sm">Coca Lata 350ml</p>
+                    <!-- preço e botao -->
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 09.90</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="coca-Lata"
+                            data-price="9.90">
+                            <i class="material-symbols-outlined text-lg text-white">shopping_cart</i>
+                        </button>
 
+                    </div>
+                    <!-- Fim Preço e Botao -->
+                </div>
+                <!-- fim descriçao -->
+            </div>
+            <!-- FIM BEBIDA ITEM 2-->
+             <!-- Bebida ITEM 2-->
+            <div class="flex gap-2 w-full">
+                <img src="./assets/refri-2.png" alt="refri1" class="w-28 h-28 rounded-md hover:scale-110
+                 hover:-rotate-2 duration-300">
+                <!-- descriçao -->
+                <div class="w-full">
+                    <p class="font-bold">Antartica Lata</p>
+                    <p class="text-sm">Antartica Lata 350ml</p>
+                    <!-- preço e botao -->
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 07.90</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Antartica-Lata"
+                            data-price="9.90">
+                            <i class="material-symbols-outlined text-lg text-white">shopping_cart</i>
+                        </button>
+
+                    </div>
+                    <!-- Fim Preço e Botao -->
+                </div>
+                <!-- fim descriçao -->
+            </div>
+            <!-- FIM BEBIDA ITEM 2-->
+        </div>
+        <!-- Fim Grid Bebidas -->
     </div>
     <!-- fim menu -->
-</body>
 
+        <!-- MODAL CART -->
+         <div class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99]  items-center justify-center hidden">
+            <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+                <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
+
+                <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+
+                <p class="font-bold">Total:<span id="cart-total">0.00</span></p>
+
+                <p class="font-bold mt-2">Endereço de Entrega </p>
+                <input type="text" placeholder=" Digite seu Endereço" id="adress"class="w-full border-2 p-1 rounded my-1">
+                <p class="text-red-500 hidden" id="adress-warn"> Digite seu Endereço Completo</p>
+
+                <div class="flex items-center justify-between mt-5 w-full">
+                    <button id="closed-modal-btn">Fechar</button>
+                    <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar Pedido</button>
+                </div>
+
+            </div>
+
+         </div>
+        <!--FIM MODAL CART -->
+
+     <!-- footer -->
+      <footer class="w-full bg-red-500 py-2 fixed bottom-0 z-40 flex items-center justify-center">
+      <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
+        (  <span id="cart-count">0</span>)
+      Veja meu Carrinho
+      <i class="material-symbols-outlined text-lg text-white">shopping_cart</i>
+      </button>
+      </footer>
+     <!--Fim footer -->
+</body>
+<!-- https://www.youtube.com/watch?v=FXm7Dfre60I&ab_channel=Sujeitoprogramador -->
 </html>

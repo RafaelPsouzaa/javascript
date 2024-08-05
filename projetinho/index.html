@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./style/output.css">
     <title>Hamburger</title>
 </head>
@@ -26,34 +27,107 @@
         Conheça Nosso Menu
     </h2>
     <!-- inicnio menu  -->
-     <div id="menu">
-        <main>
+    <div id="menu">
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 mx-auto max-w-7xl px-2 mb-16 ">
             <!-- PRODUTO ITEM -->
-            <div>
+            <div class="flex gap-2">
                 <img src="./assets/hamb-1.png" alt="hamb1" class="w-28 h-28 rounded-md hover:scale-110
-                 hover:-rotate-2 duration-300"  >
-                 <!-- descriçao -->
-                 <div>
+                 hover:-rotate-2 duration-300">
+                <!-- descriçao -->
+                <div>
                     <p class="font-bold">Hamburger Smash</p>
                     <p class="text-sm">pao levinho de whey protein zero carbo 55g de proteinas </p>
                     <!-- preço e botao -->
-                     <div class="flex items-center gap-2 justify-between mt-3">
+                    <div class="flex items-center gap-2 justify-between mt-3">
                         <!-- https://www.youtube.com/watch?v=rjXXDv23-6Y&t=1337s&ab_channel=Sujeitoprogramador -->
                         <p class="font-bold text-lg">R$ 18.90</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn">
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburger Smash"
+                            data-price="18.90">
                             <i class="material-symbols-outlined text-lg text-white">shopping_cart</i>
                         </button>
-                     
+
                     </div>
                     <!-- Fim Preço e Botao -->
-                 </div>
-                 <!-- fim descriçao -->
+                </div>
+                <!-- fim descriçao -->
             </div>
             <!-- FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM 2-->
+            <div class="flex gap-2">
+                <img src="./assets/hamb-2.png" alt="hamb2" class="w-28 h-28 rounded-md hover:scale-110
+                 hover:-rotate-2 duration-300">
+                <!-- descriçao -->
+                <div>
+                    <p class="font-bold">Hamburger supreme bacon Light</p>
+                    <p class="text-sm">pao levinho de whey protein zero carbo 55g de proteinas </p>
+                    <!-- preço e botao -->
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <!-- https://www.youtube.com/watch?v=rjXXDv23-6Y&t=1337s&ab_channel=Sujeitoprogramador -->
+                        <p class="font-bold text-lg">R$ 22.90</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburger bacon"
+                            data-price="22.90">
+                            <i class="material-symbols-outlined text-lg text-white">shopping_cart</i>
+                        </button>
+
+                    </div>
+                    <!-- Fim Preço e Botao -->
+                </div>
+                <!-- fim descriçao -->
+            </div>
+            <!-- FIM PRODUTO ITEM 2-->
+
+            <!-- PRODUTO ITEM 3-->
+            <div class="flex gap-2">
+                <img src="./assets/hamb-3.png" alt="hamb3" class="w-28 h-28 rounded-md hover:scale-110
+                 hover:-rotate-2 duration-300">
+                <!-- descriçao -->
+                <div>
+                    <p class="font-bold">Hamburger Nordeste Light</p>
+                    <p class="text-sm">pao levinho de whey protein com queijo Coalho </p>
+                    <!-- preço e botao -->
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <!-- https://www.youtube.com/watch?v=rjXXDv23-6Y&t=1337s&ab_channel=Sujeitoprogramador -->
+                        <p class="font-bold text-lg">R$ 22.90</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburger Nordeste"
+                            data-price="22.90">
+                            <i class="material-symbols-outlined text-lg text-white">shopping_cart</i>
+                        </button>
+
+                    </div>
+                    <!-- Fim Preço e Botao -->
+                </div>
+                <!-- fim descriçao -->
+            </div>
+            <!-- FIM PRODUTO ITEM 3-->
+
+            <!-- PRODUTO ITEM 4-->
+            <div class="flex gap-2">
+                <img src="./assets/hamb-4.png" alt="hamb4" class="w-28 h-28 rounded-md hover:scale-110
+                 hover:-rotate-2 duration-300">
+                <!-- descriçao -->
+                <div>
+                    <p class="font-bold">Hamburger spicy chicken</p>
+                    <p class="text-sm">pao levinho de whey protein galinha apimentada </p>
+                    <!-- preço e botao -->
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <!-- https://www.youtube.com/watch?v=rjXXDv23-6Y&t=1337s&ab_channel=Sujeitoprogramador -->
+                        <p class="font-bold text-lg">R$ 22.90</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburger spicy chicken"
+                            data-price="22.90">
+                            <i class="material-symbols-outlined text-lg text-white">shopping_cart</i>
+                        </button>
+
+                    </div>
+                    <!-- Fim Preço e Botao -->
+                </div>
+                <!-- fim descriçao -->
+            </div>
+            <!-- FIM PRODUTO ITEM 4-->
         </main>
 
-     </div>
-     <!-- fim menu -->
+    </div>
+    <!-- fim menu -->
 </body>
 
 </html>

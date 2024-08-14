@@ -176,7 +176,7 @@
     <!-- fim menu -->
 
         <!-- MODAL CART -->
-         <div class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99]  items-center justify-center hidden">
+         <div class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99]  items-center justify-center hidden" id="cart-modal">
             <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
                 <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
 
@@ -185,7 +185,7 @@
                 <p class="font-bold">Total:<span id="cart-total">0.00</span></p>
 
                 <p class="font-bold mt-2">Endereço de Entrega </p>
-                <input type="text" placeholder=" Digite seu Endereço" id="adress"class="w-full border-2 p-1 rounded my-1">
+                <input type="text" placeholder=" Digite seu Endereço" id="address"class="w-full border-2 p-1 rounded my-1">
                 <p class="text-red-500 hidden" id="adress-warn"> Digite seu Endereço Completo</p>
 
                 <div class="flex items-center justify-between mt-5 w-full">
@@ -201,12 +201,13 @@
      <!-- footer -->
       <footer class="w-full bg-red-500 py-2 fixed bottom-0 z-40 flex items-center justify-center">
       <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
-        (  <span id="cart-count">0</span>)
+        (<span id="cart-count">0</span>)
       Veja meu Carrinho
       <i class="material-symbols-outlined text-lg text-white">shopping_cart</i>
       </button>
       </footer>
      <!--Fim footer -->
+     <script src="main.js"></script>
 </body>
 <!-- https://www.youtube.com/watch?v=FXm7Dfre60I&ab_channel=Sujeitoprogramador -->
 </html>

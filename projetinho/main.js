@@ -77,7 +77,7 @@ function updateCartModal(){
          </div>
 
             
-            <button>Remover</button>
+            <button class="remove-btn" data-name="${item.name}">Remover</button>
         
 
         </div>
@@ -88,6 +88,34 @@ function updateCartModal(){
         cartItemsContainer.appendChild(cartItemElement);
      })
 
-     cartTotal.textContent = total;
+     cartTotal.textContent = total.toLocaleString("pt-BR",{
+        style:"currency",
+        currency:"BRL"
+     });
 
+     cartCount.innerHTML = cart.length;
+
+}
+
+// Funçao para remover o item do carrinho 
+cartItemsContainer.addEventListener("click",function(event){
+    if(event.target.classList.contains("remove-btn")){
+        const name = event.target.getAttribute("data-name");
+        removeItemCart(name);
+    }
+
+})
+
+function removeItemCart(name){
+    const index = cart.findIndex(item => item.name === name);
+    if(index !== -1 ){
+        const item = cart[index];
+        if(item.quantity > 1 ){
+            item.quantity -= 1;
+            updateCartModal();
+            return;
+        }
+        cart.splice(index,1);
+        updateCartModal();
+    }
 }

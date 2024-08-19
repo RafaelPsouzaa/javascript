@@ -14,8 +14,25 @@ const isOpen = checkRestauranteOpen();
 let cart=[];
 // Abrir o modal do carrinho
 cartBtn.addEventListener("click",()=>{
-    cartModal.style.display = "flex";
-    updateCartModal();
+    if(isOpen === true){
+        cartModal.style.display = "flex";
+        updateCartModal();
+
+    }else{
+        Toastify({
+            text: "Ops Restaurante fechado ",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #fc0330, #a80322)",
+            },
+        }).showToast();
+        return;
+
+    }
 })
 
 // Fechar o modal quando clicar 

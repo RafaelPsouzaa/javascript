@@ -3,11 +3,13 @@ const cartBtn = document.getElementById("cart-btn");
 const cartModal= document.getElementById("cart-modal")
 const cartItemsContainer = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
-const checkoutBtin = document.getElementById("checkout-btn");
+const checkoutBtn = document.getElementById("checkout-btn");
 const closedModalBtn = document.getElementById("closed-modal-btn");
 const cartCount = document.getElementById("cart-count");
 const addressInput =document.getElementById("address");
 const addressWarm = document.getElementById("adress-warn");
+const dataSpan =document.getElementById("date-span");
+const isOpen = checkRestauranteOpen();
 
 let cart=[];
 // Abrir o modal do carrinho
@@ -119,3 +121,68 @@ function removeItemCart(name){
         updateCartModal();
     }
 }
+
+addressInput.addEventListener("input",(event)=>{
+    let inputValue = event.target.value;
+
+    if(inputValue !== ""){
+        addressInput.classList.remove("border-red-500");
+        addressWarm.classList.add("hidden");
+    }
+
+
+})
+// Finalizar Pedido
+checkoutBtn.addEventListener("click",()=>{
+    if(!isOpen){
+        Toastify({
+            text: "Ops Restaurante fechado ",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #fc0330, #a80322)",
+            },
+        }).showToast();
+        return;
+    }
+
+    if(cart.length === 0) return;
+    if(addressInput.value === ""){
+        addressWarm.classList.remove("hidden");
+        addressInput.classList.add("border-red-500");
+        return;
+
+    }
+    // Enviar o pedido para API do whatsWeb
+    const cartItems = cart.map((item) =>{
+        return(
+            `${item.name} Quantidade: (${item.quantity}) Preço: R$${item.price}`
+        )
+    }).join("")
+
+    const message = encodeURIComponent(cartItems);
+    const phone = "982532126"
+    window.open(`https://wa.me/${phone}?text=${message} Endereco:${addressInput.value}`,"_blank")
+    cart =[];
+    updateCartModal();
+
+})
+
+
+function checkRestauranteOpen(){
+    const data = new Date();
+    const hora =  data.getHours();
+    return hora >= 18 && hora < 22;
+}
+
+if(isOpen){
+    dataSpan.classList.remove("bg-red-500");
+    dataSpan.classList.add("bg-green-600");
+}else{
+    dataSpan.classList.remove("bg-green-600");
+    dataSpan.classList.add("bg-red-500");
+}
+

@@ -7,6 +7,14 @@ const f_portas = document.querySelector("#f_portas");
 const carros = document.querySelector("#carros");
 const btn_addCarro = document.querySelector("#btn_addCarro");
 let a_carros = [];
+
+  const removerCarros = (quem)=>{
+
+       a_carros = a_carros.filter((el)=>{
+        return el.nome !=quem
+      })
+  }
+
 f_tipoMilitar.addEventListener("click", (evt) => {
   f_nome.value ="";
   f_portas.value =0;
@@ -31,12 +39,17 @@ const gerenciarCarros = () => {
       
     const div = document.createElement("div");
     const btn =document.createElement("button");
-    console.log(div);
     div.setAttribute("class", "carro");
+    div.setAttribute("data-nome", c.nome);
     div.innerHTML = `Nome:${c.nome} <br/>`;
     div.innerHTML += `Portas:${c.portas} <br/>`;
     div.innerHTML += `Cor:${c.cor} <br/>`;
     btn.innerHTML = "remover";
+    btn.addEventListener("click",(evt)=>{
+      const elementoAserRemovido = evt.target.parentNode.dataset.nome;
+      removerCarros(elementoAserRemovido);
+      gerenciarCarros();
+    })
     carros.appendChild(div);
     div.appendChild(btn);
   });
@@ -75,11 +88,13 @@ class Carro {
 }
 
 class Militar extends Carro {
-  constructor(nome, portas, blindagem, municao) {
-    super(nome, portas);
+  constructor(nome, portas, blindagem, municao,cor) {
+    super(nome, portas,cor);
     this.blindagem = blindagem;
     this.municao = municao;
+   this.cor = "Verde";
   }
+  
   atirar = function () {
     if (this.municao > 0) {
       this.municao--;

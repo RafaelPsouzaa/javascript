@@ -1,0 +1,20 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    box-sizing: border-box;
+    font-size: large;
+}
+
+.numero{
+    font-size: larger;
+}
+
+.ok{
+    color: #00f;
+}
+.erro{
+    color: #f00;
+}
+
+

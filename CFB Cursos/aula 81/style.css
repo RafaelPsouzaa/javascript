@@ -1,0 +1,22 @@
+*{
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.eyes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 400px;
+    height: 200px;
+    
+}
+
+.eye{
+    width: 200px;
+    height: 200px;
+    transform-origin: center center;
+}
